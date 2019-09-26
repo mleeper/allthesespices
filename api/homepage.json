@@ -1,0 +1,134 @@
+{
+    "recipes": {
+        "breakfast": [
+            {
+                "id": 87,
+                "title": "Tofu scramble",
+                "name": "tofu-scramble",
+                "type": "recipes",
+                "categories": [
+                    "breakfast"
+                ],
+                "image": null,
+                "description": null
+            },
+            {
+                "id": 86,
+                "title": "Vegan Pancakes",
+                "name": "vegan-pancakes",
+                "type": "recipes",
+                "categories": [
+                    "breakfast",
+                    "dinner",
+                    "lunch"
+                ],
+                "image": null,
+                "description": null
+            },
+            {
+                "id": 83,
+                "title": "Pumpkin Cranberry Muffins",
+                "name": "pumpkin-cranberry-muffins",
+                "type": "recipes",
+                "categories": [
+                    "breakfast",
+                    "dessert",
+                    "dinner",
+                    "lunch"
+                ],
+                "image": null,
+                "description": null
+            }
+        ],
+        "lunch": [
+            {
+                "id": 81,
+                "title": "Cranberry Sauce",
+                "name": "cranberry-sauce",
+                "type": "recipes",
+                "categories": [
+                    "dinner",
+                    "lunch"
+                ],
+                "image": null,
+                "description": null
+            },
+            {
+                "id": 79,
+                "title": "Soul food Collard and Mustard Greens",
+                "name": "soul-food-collard-and-mustard-greens",
+                "type": "recipes",
+                "categories": [
+                    "dinner",
+                    "lunch"
+                ],
+                "image": null,
+                "description": null
+            },
+            {
+                "id": 78,
+                "title": "Vegan Stuffing",
+                "name": "vegan-stuffing",
+                "type": "recipes",
+                "categories": [
+                    "dinner",
+                    "lunch"
+                ],
+                "image": null,
+                "description": null
+            }
+        ],
+        "dinner": [
+            {
+                "id": 64,
+                "title": "'Ginsilange' Salad",
+                "name": "ginsilange-salad",
+                "type": "recipes",
+                "categories": [
+                    "dinner",
+                    "lunch"
+                ],
+                "image": null,
+                "description": null
+            },
+            {
+                "id": 53,
+                "title": "Roasted Tomatillo Soup",
+                "name": "roasted-tomatillo-soup",
+                "type": "recipes",
+                "categories": [
+                    "dinner",
+                    "lunch"
+                ],
+                "image": null,
+                "description": null
+            }
+        ],
+        "dessert": [
+            {
+                "id": 57,
+                "title": "Sweet n' Sour Raspberry Lemon Bars",
+                "name": "sweet-n-sour-raspberry-lemon-bars",
+                "type": "recipes",
+                "categories": [
+                    "dessert"
+                ],
+                "image": null,
+                "description": null
+            },
+            {
+                "id": 43,
+                "title": "Winter Spice Cake",
+                "name": "winter-spice-cake",
+                "type": "recipes",
+                "categories": [
+                    "breakfast",
+                    "dessert"
+                ],
+                "image": null,
+                "description": null
+            }
+        ]
+    },
+    "articles": []
+}

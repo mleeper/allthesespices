@@ -1,0 +1,44 @@
+{
+    "name": "sweet-n-sour-raspberry-lemon-bars",
+    "title": "Sweet n' Sour Raspberry Lemon Bars",
+    "excerpt": "Sweet, tangy, creamy, and delicious.",
+    "images": ["https://allthesespices.com/wp-content/uploads/2019/07/WaterMark_2017-09-25-20-37-05.jpg"],
+    "time": "45 minutes",
+    "yield": "16 bars",
+    "equipment": "Blender, pyrex dish, paring knife",
+    "ingredients": [
+        {
+            "label": "Crust",
+            "ingredients": [
+                "2 cups old fashioned oats",
+                "2 cups almond meal",
+                "⅝ teaspoons of fine sea salt",
+                "2 tbsp sugar",
+                "1 cup melted coconut oil",
+                "1 tbsp agave syrup"
+            ]
+        },
+        {
+            "label": "Filling",
+            "ingredients": [
+                "2 14oz cans full fat coconut milk (don't shake or rotate cans)",
+                "2 cups cashews",
+                "1 cup fresh raspberries",
+                "¾ cup of fresh lemon juice",
+                "½ tsp of lemon extract",
+                "1 tbsp of lemon zest",
+                "2 tbsp corn starch",
+                "2 pinches of fine sea salt",
+                "¼ cup agave syrup"
+            ]
+        },
+        {
+            "label": "Optional for decoration",
+            "ingredients": [
+                "Powdered Sugar",
+                "Coconut Flakes",
+                "Thinly slice lemons"
+            ]
+        }
+    ]
+}
