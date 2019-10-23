@@ -11,10 +11,10 @@
             return (
                 <div class="menu-item grid-x">
                     <div class="cell medium-auto large-shrink menu-image">
-                        <img src={this.recipe.image || `https://via.placeholder.com/250`} />
+                        <a href={`/recipes/${this.recipe.name}`}><img src={this.recipe.image || `https://via.placeholder.com/250`} /></a>
                     </div>
                     <div class="cell auto text">
-                        <div class="title">{this.recipe.title}</div>
+                        <div class="title"><a href={`/recipes/${this.recipe.name}`}>{this.recipe.title}</a></div>
                         <div class="description">{this.recipe.description}</div>
                     </div>                                                                                    
                 </div>

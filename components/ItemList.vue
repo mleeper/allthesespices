@@ -69,13 +69,15 @@
                             this.items.map(el => {
                                 return(
                                     <li>
-                                        <figure>
-                                            <img src={el.images.length ? el.images[0] : 'https://via.placeholder.com/250'} />
-                                            <figcaption>
-                                                <p>{el.title}</p>
-                                                {el.description && <p>{el.description}</p>}
-                                            </figcaption>
-                                        </figure>                            
+                                        <a href={`/recipes/${el.name}`}>
+                                            <figure>
+                                                <img src={el.images.length ? el.images[0] : 'https://via.placeholder.com/250'} />
+                                                <figcaption>
+                                                    <p>{el.title}</p>
+                                                    {el.description && <p>{el.description}</p>}
+                                                </figcaption>
+                                            </figure>
+                                        </a>                            
                                     </li>
                                 );
                             })
@@ -141,5 +143,11 @@
         list-style: none;
         margin: 0;
         padding: 0;
+
+        li {
+            a {
+                display: block;
+            }
+        }
     }
 </style>

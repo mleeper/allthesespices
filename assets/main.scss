@@ -31,6 +31,8 @@ $link-focus-border: $primary;
 @import "~buefy/src/scss/buefy";
 
 @import "foundation.scss";
+@import "custom-list.scss";
+@import "./tabs.scss";
 
 body {
     background: linear-gradient(to left, #e1d1f1, #ebffd3);

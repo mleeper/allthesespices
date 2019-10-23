@@ -12,7 +12,8 @@
     import Heading from '../../components/Heading';
     import Icon from '../../components/Icon';
     import ItemList from '../../components/ItemList';
-    import recipes from '../../api/recipes.json';
+    import mockRecipes from '../../api/recipes.json';
+    import endpoints from '../../api/endpoints';
     export default {
         name: 'Recipes',
         data: function() {
@@ -28,10 +29,11 @@
             Icon,
             ItemList
         },
-        async asyncData( { $axios } ) {
-            const data = await recipes;
+        async asyncData( { $axios, params, req, res } ) {
+            const recipes = await $axios.get(endpoints.recipes());
+            const data = await mockRecipes;
             return {
-                items: data.recipes,
+                items: recipes.data.recipes,
                 categories: [
                     { 
                         icon: {name: 'icon-pancake'},

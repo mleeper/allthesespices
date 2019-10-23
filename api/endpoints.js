@@ -1,5 +1,5 @@
-const prefix = 'http://allthesespices.com/wp-json/api/v1';
-const contentUrl = (type, name) => `${prefix}/${type}${slug ? `/${slug}` : ''}`;
+const prefix = 'http://api.allthesespices.com/index.php/wp-json/api/v1';
+const contentUrl = (type, name) => `${prefix}/${type}${name ? `/${name}` : ''}`;
 
 export default {
     homepage: `${prefix}/homepage`,
