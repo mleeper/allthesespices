@@ -20,9 +20,7 @@
                             </div>
                         </b-tab-item>
                         <b-tab-item label="Procedure">
-                            <div class="recipe-procedure">
-                                {{recipe.procedure}}
-                            </div>
+                            <div class="recipe-procedure" v-html="recipe.procedure"></div>
                         </b-tab-item>
                     </b-tabs>
                 </div>
@@ -59,7 +57,6 @@
             }
         },
         mounted() {
-            console.log(this.recipe);
         },
         render(h) {
             
