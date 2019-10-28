@@ -9,7 +9,20 @@
                     <NameValuePair name="Equipment" :value="recipe.equipment" />
                 </div>
                 <div class="recipe-content">
-                    <IngredientList v-for="list in recipe.ingredients" :title="list.label" :list="list.ingredients" :key="list.label" />
+                    <b-tabs :model="activeTab">
+                        <b-tab-item label="Ingredients">
+                            <div class="ingredients">
+                                <IngredientList v-for="list in recipe.ingredients" 
+                                                :title="list.label" 
+                                                :list="list.ingredients" 
+                                                :key="list.label" 
+                                />
+                            </div>
+                        </b-tab-item>
+                        <b-tab-item label="Procedure">
+                            <WordPressHtml :content="recipe.procedure" />
+                        </b-tab-item>
+                    </b-tabs>
                 </div>
             </div>
         </template>
@@ -17,62 +30,74 @@
 </template>
 
 <script>
-    import recipe from '../../api/recipe.json'
+    import mockRecipe from '../../api/recipe.json'
     import PageLayout from '../../layouts/PageLayout';
     import Heading from '../../components/Heading';
     import NameValuePair from '../../components/NameValuePair';
     import IngredientList from '../../components/IngredientList';
+    import WordPressHtml from '../../components/WordPressHtml';
+    import endpoints from '../../api/endpoints';
     export default {
         name: 'Recipe',
         components: {
             PageLayout,
             Heading,
             NameValuePair,
-            IngredientList
+            IngredientList,
+            WordPressHtml
         },
         data: function() {
             return {
                 receipe: {}
             }
         },
-        async asyncData( { axios, params, req, res }) {
-            const data = await recipe;
+        async asyncData( { $axios, params, req, res }) {
+            const recipe = await $axios.get(endpoints.recipes(params.name))
+            // const data = await mockRecipe;
             return {
-                recipe: recipe,
-                params: params
+                recipe: recipe.data
             }
         },
-        mounted() {
-            console.log(this);
-        },
-        render(h) {
-            
-        }
+        mounted() {},
+        render(h) {}
     }
 </script>
 
 <style lang="scss" scoped>
     .recipe-card {
-        border: 1px solid lightgray;
-        background: lightgray;
-
         .heading {
-            margin: 0 4rem;
+            text-align: center;
         }
-
         .recipe-content {
             background: #FFF;
-            margin: 2rem;
+            margin: 2rem auto;
+            width: 75%;
+        }
+        .basic-details {
+            width: 60vw;
+            margin: 0 auto;
+        }
+        .ingredient-list {
+            margin-bottom: 1rem;
+        }
+        .recipe-procedure {
+            height: 100%;
         }
         @media(min-width: 768px) {
-            .heading {
-                text-align: center;
-                margin: 0;
+            .recipe-content {
+                width: 50%;
             }
-
             .basic-details {
                 display: flex;
-                justify-content: space-evenly;
+                justify-content: center;
+                width: auto;
+                margin: 0rem;
+
+                .name-value-pair {
+                    &:not(first-child) {
+                        padding-left: 1rem;
+                    }
+                }
             }
         }
     }

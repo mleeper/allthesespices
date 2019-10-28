@@ -1,0 +1,11 @@
+.custom-list {
+    list-style: none;
+    li {
+        display: flex;
+        &:before {
+            color: green;
+            content: "\2605";
+            margin-right: 0.5rem;
+        }
+    }
+}

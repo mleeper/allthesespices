@@ -91,8 +91,8 @@
             }
         },
         async asyncData( { $axios } ) {
-            //const { data } = await $axios.get(endpoints.homepage);
-            const data = await homepageData;
+            const { data } = await $axios.get(endpoints.homepage);
+            //const data = await homepageData;
             return {
                 recipes: data.recipes
             }
