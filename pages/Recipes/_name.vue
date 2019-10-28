@@ -20,7 +20,7 @@
                             </div>
                         </b-tab-item>
                         <b-tab-item label="Procedure">
-                            <div class="recipe-procedure" v-html="recipe.procedure"></div>
+                            <WordPressHtml :content="recipe.procedure" />
                         </b-tab-item>
                     </b-tabs>
                 </div>
@@ -35,6 +35,7 @@
     import Heading from '../../components/Heading';
     import NameValuePair from '../../components/NameValuePair';
     import IngredientList from '../../components/IngredientList';
+    import WordPressHtml from '../../components/WordPressHtml';
     import endpoints from '../../api/endpoints';
     export default {
         name: 'Recipe',
@@ -42,7 +43,8 @@
             PageLayout,
             Heading,
             NameValuePair,
-            IngredientList
+            IngredientList,
+            WordPressHtml
         },
         data: function() {
             return {
@@ -56,11 +58,8 @@
                 recipe: recipe.data
             }
         },
-        mounted() {
-        },
-        render(h) {
-            
-        }
+        mounted() {},
+        render(h) {}
     }
 </script>
 
@@ -81,6 +80,9 @@
         .ingredient-list {
             margin-bottom: 1rem;
         }
+        .recipe-procedure {
+            height: 100%;
+        }
         @media(min-width: 768px) {
             .recipe-content {
                 width: 50%;
@@ -98,8 +100,5 @@
                 }
             }
         }
-    }
-    .recipe-procedure {
-        height: 100%;
     }
 </style>
