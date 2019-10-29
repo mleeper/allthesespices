@@ -1,8 +1,8 @@
 <template>
     <PageLayout name="DefaultLayout">
         <template #default>
-            <div class="featured grid-x">
-                <div class="articles medium-4 cell">
+            <div class="featured">
+                <div class="articles">
                     <Heading level="2">Articles</Heading>
                     <div class="list">
                         <Excerpt date='03/01/2019'
@@ -31,7 +31,7 @@
                         />
                     </div>
                 </div>
-                <div class="recipes medium-8 cell">
+                <div class="recipes">
                     <Heading level="2">On the Menu Today</Heading>
                     <div class="recipe-box">
                         <b-tabs :model="activeTab">
@@ -107,12 +107,14 @@
     .top {
         padding: 0 2rem;
         .featured {
-            flex-flow: row wrap-reverse;
-            
             @media(min-width: 768px) {
-                flex-flow: row wrap;
+                display: flex;
             }
             .recipes {
+                @media(min-width: 768px) {
+                    margin-left: 2rem;
+                    width: 60%;
+                }
                 .heading {
                     margin-top: 0rem;
                 }
@@ -137,6 +139,11 @@
             }
         }
         .articles {
+            height: 60vh;
+            overflow-y: scroll;
+            @media(min-width: 768px) {
+                width: 40%;
+            }
             .heading {
                     margin-top: 0rem;
                 }
