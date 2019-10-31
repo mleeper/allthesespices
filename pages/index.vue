@@ -4,32 +4,18 @@
             <div class="featured">
                 <div class="articles">
                     <Heading level="2">Articles</Heading>
-                    <div class="list">
-                        <Excerpt date='03/01/2019'
-                                    title="Article Title"
-                                    category="Saving Money"
-                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                    imageSrc="static/sample.jpg"
-                        />
-                        <Excerpt date='03/01/2019'
-                                    title="Article Title"
-                                    category="Saving Money"
-                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                    imageSrc="static/sample.jpg"
-                        />
-                        <Excerpt date='03/01/2019'
-                                    title="Article Title"
-                                    category="Saving Money"
-                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                    imageSrc="static/sample.jpg"
-                        />
-                        <Excerpt date='03/01/2019'
-                                    title="Article Title"
-                                    category="Saving Money"
-                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                    imageSrc="static/sample.jpg"
+                    <div v-if="articles.length > 0" class="list">
+                        <Excerpt
+                          v-for="article in articles"
+                          :key="article.title"
+                          date="article.date"
+                          title="article.title"
+                          category="article.category"
+                          text="article.text"
+                          imageSrc="article.image"
                         />
                     </div>
+                    <div v-else>Stay tuned, coming soon</div>
                 </div>
                 <div class="recipes">
                     <Heading level="2">On the Menu Today</Heading>
@@ -94,11 +80,12 @@
             const { data } = await $axios.get(endpoints.homepage);
             //const data = await homepageData;
             return {
-                recipes: data.recipes
+                recipes: data.recipes,
+                articles: data.articles
             }
         },
         mounted() {
-            console.log(this.recipes.breakfast);
+            console.log(this);
         }
     };
 </script>
@@ -139,8 +126,10 @@
             }
         }
         .articles {
-            height: 60vh;
-            overflow-y: scroll;
+            .list {
+                height: 60vh;
+                overflow-y: scroll;
+            }
             @media(min-width: 768px) {
                 width: 40%;
             }
