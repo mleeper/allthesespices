@@ -38,32 +38,6 @@
         render(h) {
             return (
                 <div class="item-list">
-                    <div class="categories">
-                        {
-                            this.categories.map(el => {
-                                return(
-                                    <div class="category">
-                                        {el.icon && (
-                                            <div class="category-icon">
-                                                <Icon icon={el.icon.name} size={el.icon.size} />
-                                            </div>
-                                        )}
-                                        <div class="category-title">{el.title}</div>
-                                    </div>
-                                );
-                            })
-                        }
-                    </div>
-                    <div class="toolbar">
-                        <div class="search-bar">
-                            <input type="text" placeholder="Search for recipes by name or ingredient"/>
-                            <button><Icon icon="fas fa-search" cssClass="search-icon"/></button>
-                        </div>
-                        <div class="controls">
-                            <button><Icon icon="fas fa-sort" /></button>
-                            <button><Icon icon="fas fa-filter" /></button>
-                        </div>
-                    </div>
                     <ol class="items">
                         {
                             this.items.map(el => {
