@@ -77,6 +77,9 @@
             width: 60vw;
             margin: 0 auto;
         }
+        .image {
+            text-align: center;
+        }
         .ingredient-list {
             margin-bottom: 1rem;
         }

@@ -45,7 +45,7 @@
                                     <li>
                                         <a href={`/recipes/${el.name}`}>
                                             <figure>
-                                                <img src={el.images.length ? el.images[0] : 'https://via.placeholder.com/250'} />
+                                                <img src={el.images.length ? el.images[0] : 'http://api.allthesespices.com/wp-content/uploads/2019/11/anise-aroma-aromatic-301669.jpg'} />
                                                 <figcaption>
                                                     <p>{el.title}</p>
                                                     {el.description && <p>{el.description}</p>}
@@ -122,6 +122,11 @@
             a {
                 display: block;
             }
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
         }
     }
 </style>
