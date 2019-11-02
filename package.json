@@ -1,7 +1,7 @@
 {
-  "name": "allthesespices-nuxt",
+  "name": "All these Spices",
   "version": "1.0.0",
-  "description": "All these spices. Vegan blog.",
+  "description": "All these spices. Vegan blog. Vegan Lifestyle. Learn how to make great tasting vegan dishes",
   "author": "Marcus Leeper",
   "private": true,
   "scripts": {
