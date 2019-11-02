@@ -10,7 +10,7 @@
     <main class="wrapper main" id="content">
       <div class="top"><slot></slot></div>
       <div class="middle">
-        <Topics />
+        <!-- <Topics /> -->
         <slot name="middle"></slot>
       </div>
       <div class="bottom">
