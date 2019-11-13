@@ -8,11 +8,11 @@
                         <Excerpt
                           v-for="article in articles"
                           :key="article.title"
-                          date="article.date"
-                          title="article.title"
-                          category="article.category"
-                          text="article.text"
-                          imageSrc="article.image"
+                          :date="article.date"
+                          :title="article.title"
+                          :category="article.category"
+                          :text="article.excerpt"
+                          :image="article.image"
                         />
                     </div>
                     <div v-else>Stay tuned, coming soon</div>
@@ -81,7 +81,7 @@
             //const data = await homepageData;
             return {
                 recipes: data.recipes,
-                articles: data.articles
+                articles: data.testArticles
             }
         },
         mounted() {
