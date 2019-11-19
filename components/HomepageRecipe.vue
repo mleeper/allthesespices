@@ -42,6 +42,10 @@
                 font-family: 'Londrina Shadow';
                 font-size: 40px;
                 color:#69091d;
+
+                a {
+                    cursor: pointer;
+                }
             }
         }
         img {
