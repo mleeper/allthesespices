@@ -10,6 +10,7 @@
                           :key="article.title"
                           :date="article.date"
                           :title="article.title"
+                          :name="article.name"
                           :category="article.category"
                           :text="article.excerpt"
                           :image="article.image"

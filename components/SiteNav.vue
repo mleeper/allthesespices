@@ -2,6 +2,7 @@
   <nav class="site-nav">
     <a href="/">Home</a>
     <a href="/recipes">Recipes</a>
+    <a href="/articles">Articles</a>
     <!-- <a href="#">Stuff we use</a>
     <a href="#">Vegan Replacements</a> -->
   </nav>
