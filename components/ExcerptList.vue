@@ -16,6 +16,7 @@
                 this.list.map(article => (
                     <Excerpt
                         key={article.title}
+                        name={article.name}
                         date={article.date}
                         title={article.title}
                         category={article.category}

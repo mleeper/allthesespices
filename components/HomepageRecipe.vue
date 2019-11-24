@@ -11,7 +11,7 @@
             return (
                 <div class="menu-item grid-x">
                     <div class="cell medium-auto large-shrink menu-image">
-                        <a href={`/recipes/${this.recipe.name}`}><img src={this.recipe.image || `http://api.allthesespices.com/wp-content/uploads/2019/11/anise-aroma-aromatic-301669.jpg`} /></a>
+                        <a href={`/recipes/${this.recipe.name}`}><img src={(this.recipe.image || {}).medium || `http://api.allthesespices.com/wp-content/uploads/2019/11/anise-aroma-aromatic-301669.jpg`} /></a>
                     </div>
                     <div class="cell auto text">
                         <div class="title"><a href={`/recipes/${this.recipe.name}`}>{this.recipe.title}</a></div>
@@ -19,6 +19,9 @@
                     </div>                                                                                    
                 </div>
             );
+        },
+        mounted() {
+            console.log(this.recipe);
         }
     }
 </script>
@@ -47,10 +50,6 @@
                     cursor: pointer;
                 }
             }
-        }
-        img {
-            width: 250px;
-            height: 250px;
         }
     }
 </style>

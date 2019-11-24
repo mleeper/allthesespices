@@ -82,7 +82,7 @@
             //const data = await homepageData;
             return {
                 recipes: data.recipes,
-                articles: data.testArticles
+                articles: data.articles
             }
         },
         mounted() {
