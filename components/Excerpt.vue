@@ -7,7 +7,7 @@
     </div>
     <div class="content grid-x">
       <div class="cell large-shrink image">
-        <img :src="image ? image : 'http://api.allthesespices.com/wp-content/uploads/2019/11/anise-aroma-aromatic-301669.jpg'" />
+        <img :src="image && typeof image.medium === 'string' ? image.medium : 'http://api.allthesespices.com/wp-content/uploads/2019/11/anise-aroma-aromatic-301669.jpg'" />
       </div>
       <div class="cell auto text" :if="text">{{ text }}</div>
     </div>
