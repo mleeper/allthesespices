@@ -4,5 +4,6 @@ const contentUrl = (type, name) => `${prefix}/${type}${name ? `/${name}` : ''}`;
 export default {
     homepage: `${prefix}/homepage`,
     recipes: name => contentUrl('recipes', name),
-    articles: name => contentUrl('articles', name)
+    articles: name => contentUrl('articles', name),
+    about: name => contentUrl('aboutus', name),
 }

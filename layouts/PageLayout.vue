@@ -48,7 +48,7 @@ header {
   padding: 2rem;
 }
 main {
-  height: calc(100vh - 250px);
+  height: calc(100vh - 282px);
   overflow-y: scroll;
   padding: 2rem;
 }
