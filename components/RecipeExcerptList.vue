@@ -104,7 +104,7 @@
     .items {
         display: grid;
         grid-gap: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: 1fr;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -118,6 +118,14 @@
         img {
             width: 250px;
             height: 250px;
+        }
+
+        @media(min-width: 768px) {
+           grid-template-columns: 1fr 1fr; 
+        }
+
+        @media(min-width: 1024px) {
+            grid-template-columns: 1fr 1fr 1fr;
         }
     }
 </style>

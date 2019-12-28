@@ -2,11 +2,11 @@
   <div class="site-layout">
     <div class="background">
       <header>
-      <SiteTitle />
-      <!-- <div class="site-subtitle">
-        Which spices? All these spices:
-      </div> -->
-      <SiteNav />
+        <SiteTitle />
+        <!-- <div class="site-subtitle">
+          Which spices? All these spices:
+        </div> -->
+        <SiteNav />
       </header>
       <main class="wrapper main" id="content">
         <div class="top"><slot></slot></div>
@@ -43,11 +43,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 header {
-  display: flex;
   margin-bottom: 2rem;
+  height: 100px;
+  padding: 2rem;
 }
-.site-title {
-  font-size: 64px;
+main {
+  height: calc(100vh - 250px);
+  overflow-y: scroll;
+  padding: 2rem;
+}
+footer {
+  height: 150px;
 }
 .site-subtitle {
   font-size: 36px;
@@ -55,13 +61,6 @@ header {
 .background {
   background: url('/spiceboard.jpg');
   background-size: cover;
-}
-.top {
-  padding: 0 1rem;
-  height: 500px;
-}
-.middle {
-  padding: 2rem 1rem 0 1rem;
-  background: #f6f5f7;
+  background-attachment: fixed;
 }
 </style>
