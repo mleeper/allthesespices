@@ -1,23 +1,25 @@
 <template>
   <div class="site-layout">
-    <header>
-      <SiteTitle />
-      <div class="site-subtitle">
-        Which spices? All these spices:
-      </div>
-      <SiteNav />
-    </header>
-    <main class="wrapper main" id="content">
-      <div class="top"><slot></slot></div>
-      <div class="middle">
-        <!-- <Topics /> -->
-        <slot name="middle"></slot>
-      </div>
-      <div class="bottom">
-        <slot name="bottom"></slot>
-        <SiteFooter />
-      </div>
-    </main>
+    <div class="background">
+      <header>
+        <SiteTitle />
+        <!-- <div class="site-subtitle">
+          Which spices? All these spices:
+        </div> -->
+        <SiteNav />
+      </header>
+      <main class="wrapper main" id="content">
+        <div class="top"><slot></slot></div>
+        <div class="middle">
+          <!-- <Topics /> -->
+          <slot name="middle"></slot>
+        </div>
+      </main>
+    </div>
+    <footer class="bottom">
+      <slot name="bottom"></slot>
+      <SiteFooter />
+    </footer>
   </div>
 </template>
 <script>
@@ -41,20 +43,24 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 header {
-  text-align: center;
   margin-bottom: 2rem;
+  height: 130px;
+  padding: 2rem;
 }
-.site-title {
-  font-size: 64px;
+main {
+  height: calc(100vh - 282px);
+  overflow-y: scroll;
+  padding: 2rem;
+}
+footer {
+  height: 150px;
 }
 .site-subtitle {
   font-size: 36px;
 }
-.top {
-  padding: 0 1rem;
-}
-.middle {
-  padding: 2rem 1rem 0 1rem;
-  background: #f6f5f7;
+.background {
+  background: url('/spiceboard.jpg');
+  background-size: cover;
+  background-attachment: fixed;
 }
 </style>

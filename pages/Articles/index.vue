@@ -2,7 +2,7 @@
     <PageLayout name="DefaultLayout">
         <template #default>
             <div class="articles-list" :if="articles.length > 0">
-                <ExcerptList :list="articles" />
+                <ArticleExcerptList :list="articles" />
             </div>
         </template>
     </PageLayout>
@@ -10,14 +10,14 @@
 <script>
     import PageLayout from '../../layouts/PageLayout';
     import Heading from '../../components/Heading';
-    import ExcerptList from '../../components/ExcerptList';
+    import ArticleExcerptList from '../../components/ArticleExcerptList';
     import endpoints from '../../api/endpoints';
     export default {
         name: 'Articles',
         components: {
             PageLayout,
             Heading,
-            ExcerptList
+            ArticleExcerptList
         },
         async asyncData( { $axios, params, req, res } ) {
             const articles = await $axios.get(endpoints.articles());

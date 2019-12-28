@@ -1,5 +1,5 @@
 <template>
-  <div class="site-title">All These Spices</div>
+  <div class="site-title"><a href="/">All These Spices</a></div>
 </template>
 <script>
 export default {
@@ -11,5 +11,18 @@ export default {
 <style lang="scss">
 .site-title {
   font-family: "Fredericka the Great";
+  font-size: 32px;
+
+  @media(min-width: 768px) {
+    font-size: 50px;
+  }
+
+  @media(min-width: 1024px) {
+    font-size: 64px;
+  }
+
+  a {
+    color: #000;
+  }
 }
 </style>

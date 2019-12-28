@@ -69,7 +69,7 @@
             text-align: center;
         }
         .recipe-content {
-            background: #FFF;
+            background:rgba(255, 255, 255, .9);
             margin: 2rem auto;
             width: 75%;
         }
