@@ -1,23 +1,25 @@
 <template>
   <div class="site-layout">
-    <header>
+    <div class="background">
+      <header>
       <SiteTitle />
-      <div class="site-subtitle">
+      <!-- <div class="site-subtitle">
         Which spices? All these spices:
-      </div>
+      </div> -->
       <SiteNav />
-    </header>
-    <main class="wrapper main" id="content">
-      <div class="top"><slot></slot></div>
-      <div class="middle">
-        <!-- <Topics /> -->
-        <slot name="middle"></slot>
-      </div>
-      <div class="bottom">
-        <slot name="bottom"></slot>
-        <SiteFooter />
-      </div>
-    </main>
+      </header>
+      <main class="wrapper main" id="content">
+        <div class="top"><slot></slot></div>
+        <div class="middle">
+          <!-- <Topics /> -->
+          <slot name="middle"></slot>
+        </div>
+      </main>
+    </div>
+    <footer class="bottom">
+      <slot name="bottom"></slot>
+      <SiteFooter />
+    </footer>
   </div>
 </template>
 <script>
@@ -41,7 +43,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 header {
-  text-align: center;
+  display: flex;
   margin-bottom: 2rem;
 }
 .site-title {
@@ -50,8 +52,13 @@ header {
 .site-subtitle {
   font-size: 36px;
 }
+.background {
+  background: url('/spiceboard.jpg');
+  background-size: cover;
+}
 .top {
   padding: 0 1rem;
+  height: 500px;
 }
 .middle {
   padding: 2rem 1rem 0 1rem;

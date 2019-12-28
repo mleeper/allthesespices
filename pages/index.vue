@@ -2,7 +2,7 @@
     <PageLayout name="DefaultLayout">
         <template #default>
             <div class="featured">
-                <div class="articles">
+                <!-- <div class="articles">
                     <Heading level="2">Articles</Heading>
                     <div v-if="articles.length > 0" class="list">
                         <ArticleExcerpt
@@ -17,8 +17,8 @@
                         />
                     </div>
                     <div v-else>Stay tuned, coming soon</div>
-                </div>
-                <div class="recipes">
+                </div> -->
+                <!-- <div class="recipes">
                     <Heading level="2">On the Menu Today</Heading>
                     <div class="recipe-box">
                         <b-tabs :model="activeTab">
@@ -52,7 +52,7 @@
                             </b-tab-item>
                         </b-tabs>
                     </div>
-                </div>
+                </div> -->
             </div>
         </template>
     </PageLayout>
