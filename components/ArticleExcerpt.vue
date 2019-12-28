@@ -16,7 +16,7 @@
 <script>
 import Heading from '../components/Heading';
 export default {
-  name: `Excerpt`,
+  name: `ArticleExcerpt`,
   props: ["date", "category", "title", "text", "image", "contentUrl", "name"],
   components: { Heading },
 };

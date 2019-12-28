@@ -2,7 +2,7 @@
     <PageLayout name="DefaultLayout">
         <template #default>
             <div class="recipes">
-                <ItemList :categories="categories" :items="items" />
+                <RecipeExcerptList :categories="categories" :items="items" />
             </div>
         </template>
     </PageLayout>
@@ -11,8 +11,7 @@
     import PageLayout from '../../layouts/PageLayout';
     import Heading from '../../components/Heading';
     import Icon from '../../components/Icon';
-    import ItemList from '../../components/ItemList';
-    import mockRecipes from '../../api/recipes.json';
+    import RecipeExcerptList from '../../components/RecipeExcerptList';
     import endpoints from '../../api/endpoints';
     export default {
         name: 'Recipes',
@@ -27,11 +26,10 @@
             PageLayout,
             Heading,
             Icon,
-            ItemList
+            RecipeExcerptList
         },
         async asyncData( { $axios, params, req, res } ) {
             const recipes = await $axios.get(endpoints.recipes());
-            const data = await mockRecipes;
             return {
                 items: recipes.data.recipes,
                 categories: [
@@ -53,9 +51,6 @@
                     }
                 ]
             }
-        },
-        mounted() {
-           console.log(this); 
         }
     };
 </script>

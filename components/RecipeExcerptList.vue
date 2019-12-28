@@ -1,7 +1,8 @@
 <script>
-    import Icon from '../components/Icon'; 
+    import Icon from '../components/Icon';
+    import RecipeExcerpt from '../components/RecipeExcerpt'; 
     export default {
-        name: 'ItemList',
+        name: 'RecipeExcerptList',
         props: {
             categories: {
                 type: Array,
@@ -37,27 +38,17 @@
         },
         render(h) {
             return (
-                <div class="item-list">
-                    <ol class="items">
-                        {
-                            this.items.map(el => {
-                                return(
-                                    <li>
-                                        <a href={`/recipes/${el.name}`}>
-                                            <figure>
-                                                <img src={el.image ? el.image.medium : 'http://api.allthesespices.com/wp-content/uploads/2019/11/anise-aroma-aromatic-301669.jpg'} />
-                                                <figcaption>
-                                                    <p>{el.title}</p>
-                                                    {el.description && <p>{el.description}</p>}
-                                                </figcaption>
-                                            </figure>
-                                        </a>                            
-                                    </li>
-                                );
-                            })
-                        }
-                    </ol>
-                </div>
+                <ul class="items">
+                    {
+                        this.items.map(el => {
+                            return(
+                                <li>
+                                    <RecipeExcerpt recipe={el} />                 
+                                </li>
+                            );
+                        })
+                    }
+                </ul>
             )
         }
     }

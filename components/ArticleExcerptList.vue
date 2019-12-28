@@ -1,9 +1,9 @@
 <script>
-    import Excerpt from './Excerpt';
+    import ArticleExcerpt from './ArticleExcerpt';
     export default {
         name: 'ExcerptList',
         components: {
-            Excerpt
+            ArticleExcerpt
         },
         props: {
             list: {
@@ -14,7 +14,7 @@
         render(h) {
             return (
                 this.list.map(article => (
-                    <Excerpt
+                    <ArticleExcerpt
                         key={article.title}
                         name={article.name}
                         date={article.date}

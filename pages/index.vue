@@ -5,7 +5,7 @@
                 <div class="articles">
                     <Heading level="2">Articles</Heading>
                     <div v-if="articles.length > 0" class="list">
-                        <Excerpt
+                        <ArticleExcerpt
                           v-for="article in articles"
                           :key="article.title"
                           :date="article.date"
@@ -25,28 +25,28 @@
                             <b-tab-item label="Breakfast">
                                 <div class="menu">
                                     <div class="menu-item-container" v-for="recipe in recipes.breakfast" :key="recipe.id">
-                                        <HomepageRecipe :recipe=recipe></HomepageRecipe>
+                                        <RecipeExcerpt :recipe=recipe></RecipeExcerpt>
                                     </div>     
                                 </div>
                             </b-tab-item>
                             <b-tab-item label="Lunch">
                                 <div class="menu">
                                     <div class="menu-item-container" v-for="recipe in recipes.lunch" :key="recipe.id">
-                                        <HomepageRecipe :recipe=recipe></HomepageRecipe>
+                                        <RecipeExcerpt :recipe=recipe></RecipeExcerpt>
                                     </div>     
                                 </div>
                             </b-tab-item>
                             <b-tab-item label="Dinner">
                                 <div class="menu">
                                     <div class="menu-item-container" v-for="recipe in recipes.dinner" :key="recipe.id">
-                                        <HomepageRecipe :recipe=recipe></HomepageRecipe>
+                                        <RecipeExcerpt :recipe=recipe></RecipeExcerpt>
                                     </div>     
                                 </div>
                             </b-tab-item>
                             <b-tab-item label="Dessert">
                                 <div class="menu">
                                     <div class="menu-item-container" v-for="recipe in recipes.dessert" :key="recipe.id">
-                                        <HomepageRecipe :recipe=recipe></HomepageRecipe>
+                                        <RecipeExcerpt :recipe=recipe></RecipeExcerpt>
                                     </div>     
                                 </div>
                             </b-tab-item>
@@ -60,8 +60,8 @@
 <script>
     import PageLayout from '../layouts/PageLayout';
     import Heading from '../components/Heading';
-    import Excerpt from '../components/Excerpt';
-    import HomepageRecipe from '../components/HomepageRecipe';
+    import ArticleExcerpt from '../components/ArticleExcerpt';
+    import RecipeExcerpt from '../components/RecipeExcerpt';
     import endpoints from '../api/endpoints';    
     import homepageData from '../api/homepage.json';
     export default {
@@ -69,8 +69,8 @@
         components: {
             PageLayout,
             Heading,
-            Excerpt,
-            HomepageRecipe
+            ArticleExcerpt,
+            RecipeExcerpt
         },
         data() {
             return {
@@ -119,9 +119,6 @@
                         .nav-tabs-navigation {
                             margin-bottom: 0;
                         }
-                    }
-                    .menu {
-                        
                     }
                 }
             }
