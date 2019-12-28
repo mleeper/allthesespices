@@ -44,7 +44,7 @@ export default {
 <style lang="scss" scoped>
 header {
   margin-bottom: 2rem;
-  height: 100px;
+  height: 130px;
   padding: 2rem;
 }
 main {
