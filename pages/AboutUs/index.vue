@@ -3,7 +3,12 @@
         <template #default>
             <div class="about-us">
                 <Heading level={2} v-html="aboutUs.first_name[0]"></Heading>
-                <div class="description">{{aboutUs.description[0]}}</div>
+                <div class="bio-picture">
+                    <div class="picture-border">
+                        <img src="/about-us.jpg" />
+                    </div>
+                </div>
+                <div class="bio">{{aboutUs.description[0]}}</div>
             </div>
         </template>
     </PageLayout>
@@ -45,9 +50,23 @@
                 font-size: 40px;
             }
         }
-        .description {
+        .bio-picture {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+
+            .picture-border {
+                border: 3px solid #866517;
+
+                img {
+                    border: 6px solid goldenrod;
+                }
+            }
+        }
+        .bio {
              background: rgba(255, 255, 255, .9);
              padding: 1rem;
+             line-height: 2;
              @media(min-width: 1024px) {
                 width: 50%;
                 margin: 0 auto;
