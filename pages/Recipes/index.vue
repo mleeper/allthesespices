@@ -1,5 +1,5 @@
 <template>
-    <PageLayout name="DefaultLayout">
+    <PageLayout name="DefaultLayout" :overlayContent="true">
         <template #default>
             <div class="recipes">
                 <RecipeExcerptList :categories="categories" :items="items" />
@@ -56,5 +56,6 @@
 </script>
 <style lang="scss" scoped>
     .recipes {
+        
     }
 </style>

@@ -11,14 +11,10 @@ export default {
 <style lang="scss">
 .site-title {
   font-family: "Fredericka the Great";
-  font-size: 32px;
+  font-size: 30px;
 
   @media(min-width: 768px) {
     font-size: 50px;
-  }
-
-  @media(min-width: 1024px) {
-    font-size: 64px;
   }
 
   a {

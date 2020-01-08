@@ -3,22 +3,27 @@
     <div class="background">
       <header>
         <SiteTitle />
-        <!-- <div class="site-subtitle">
-          Which spices? All these spices:
-        </div> -->
-        <SiteNav />
+        <MainMenu />
       </header>
-      <main class="wrapper main" id="content">
+      <main class="wrapper main" :class="{'overlay-content': overlayContent}" id="content">
         <div class="top"><slot></slot></div>
         <div class="middle">
-          <!-- <Topics /> -->
           <slot name="middle"></slot>
         </div>
       </main>
     </div>
     <footer class="bottom">
       <slot name="bottom"></slot>
-      <SiteFooter />
+      <SiteNav />
+      <SlidePanel position="bottom" :overlay="false">
+        <template #trigger>
+         <span>Disclaimer</span>
+        </template>
+        <template>
+          <Disclaimer />
+        </template>
+      </SlidePanel>
+      <Copyright />
     </footer>
   </div>
 </template>
@@ -27,15 +32,27 @@ import SiteTitle from "../components/SiteTitle";
 import SiteNav from "../components/SiteNav";
 import SiteHeader from "../components/SiteHeader";
 import Topics from "../components/Topics";
-import SiteFooter from "../components/SiteFooter";
+import MainMenu from '../components/MainMenu';
+import Copyright from '../components/Copyright';
+import Disclaimer from '../components/Disclaimer';
+import SlidePanel from '../components/SlidePanel';
 export default {
   name: `SiteLayout`,
   components: {
     SiteTitle,
     SiteNav,
+    MainMenu,
     SiteHeader,
     Topics,
-    SiteFooter
+    Copyright,
+    Disclaimer,
+    SlidePanel,
+  },
+  props: {
+    overlayContent: {
+      type: Boolean,
+      default: false
+    }
   }
 };
 </script>
@@ -43,20 +60,34 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 header {
-  margin-bottom: 2rem;
-  height: 130px;
-  padding: 2rem;
+  padding: 1rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  height: 100px;
 }
 main {
-  height: calc(100vh - 282px);
+  height: calc(100vh - 200px);
   overflow-y: scroll;
-  padding: 2rem;
+  padding: 1rem;
+
+  &.overlay-content {
+    background: rgba(255, 255, 255, 0.65);
+  }
 }
 footer {
-  height: 150px;
-}
-.site-subtitle {
-  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  .site-title {
+    font-size: 20px;
+
+    @media(min-width: 768px) {
+      font-size: 30px;
+    }
+  }
+  height: 100px;
 }
 .background {
   background: url('/spiceboard.jpg');
