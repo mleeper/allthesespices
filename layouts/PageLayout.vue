@@ -5,7 +5,7 @@
         <SiteTitle />
         <MainMenu />
       </header>
-      <main class="wrapper main" id="content">
+      <main class="wrapper main" :class="{'overlay-content': overlayContent}" id="content">
         <div class="top"><slot></slot></div>
         <div class="middle">
           <slot name="middle"></slot>
@@ -47,6 +47,12 @@ export default {
     Copyright,
     Disclaimer,
     SlidePanel,
+  },
+  props: {
+    overlayContent: {
+      type: Boolean,
+      default: false
+    }
   }
 };
 </script>
@@ -65,9 +71,10 @@ header {
 main {
   height: calc(100vh - 200px);
   overflow-y: scroll;
-  
-  @media(min-width: 768px) {
-    padding: 1rem;
+  padding: 1rem;
+
+  &.overlay-content {
+    background: rgba(255, 255, 255, 0.65);
   }
 }
 footer {

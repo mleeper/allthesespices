@@ -2,7 +2,7 @@
     <div class="main-menu">
         <SlidePanel>
             <template #trigger>
-                <Icon icon="fas fa-bars fa-3x" />
+                <Icon icon="fas fa-bars fa-2x" />
             </template>
             <template>
                 <SiteNav />

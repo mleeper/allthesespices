@@ -17,10 +17,6 @@ export default {
     font-size: 50px;
   }
 
-  @media(min-width: 1024px) {
-    font-size: 64px;
-  }
-
   a {
     color: #000;
   }
