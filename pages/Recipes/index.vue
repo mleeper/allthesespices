@@ -57,5 +57,10 @@
 <style lang="scss" scoped>
     .recipes {
         background: rgba(255, 255, 255, 0.65);
+        padding: 1rem;
+
+        @media(min-width: 768px) {
+            padding: 0;
+        }
     }
 </style>
