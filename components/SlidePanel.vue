@@ -2,11 +2,15 @@
     <div class="slide-panel" :class="[{open : isOpen}, position]">
         <a href="#" v-on:click="toggleMenu">
             <slot name="trigger"></slot></a>
-        <div class="overlay">
+        <div class="overlay" v-if="overlay">
             <div class="content">
                 <a class="close-button" href="#" v-on:click="toggleMenu"><Icon icon="fas fa-times fa-2x" /></a>
                 <slot></slot>
             </div>
+        </div>
+        <div class="content" v-else>
+            <a class="close-button" href="#" v-on:click="toggleMenu"><Icon icon="fas fa-times fa-2x" /></a>
+            <slot></slot>
         </div>
         
     </div>
@@ -22,6 +26,10 @@ export default {
       position: {
           type: String,
           default: 'left',
+      },
+      overlay: {
+          type: Boolean,
+          default: true,
       }
   },
   data: function() {
@@ -56,7 +64,7 @@ export default {
         padding: 1rem 1rem 0 0;
         transition: 0.5s;
         color: #FFF;
-
+        padding: 1rem;
         .close-button {
             display: block;
             text-align: right;
@@ -84,7 +92,7 @@ export default {
                 width: 100%;
 
                 @media(min-width: 768px) {
-                    width: 25vh;
+                    width: 33vh;
                 }
             }
 
@@ -93,12 +101,13 @@ export default {
     &.bottom {
         .overlay, .content {
             left: 0;
-            top: 100%;
+            top: auto;
+            bottom: -100%;
             width: 100%;
         }
         &.open {
             .overlay, .content {
-                top: 80%;
+                bottom: 0;
             }
         }
     }

@@ -1,5 +1,5 @@
 <template>
-    <PageLayout name="DefaultLayout" overlayContent="true">
+    <PageLayout name="DefaultLayout" :overlayContent="true">
         <template #default>
             <div class="recipes">
                 <RecipeExcerptList :categories="categories" :items="items" />

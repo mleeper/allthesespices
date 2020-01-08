@@ -15,7 +15,7 @@
     <footer class="bottom">
       <slot name="bottom"></slot>
       <SiteNav />
-      <SlidePanel position="bottom">
+      <SlidePanel position="bottom" :overlay="false">
         <template #trigger>
           <a href="#">Disclaimer</a>
         </template>
