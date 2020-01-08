@@ -17,7 +17,7 @@
       <SiteNav />
       <SlidePanel position="bottom" :overlay="false">
         <template #trigger>
-          <a href="#">Disclaimer</a>
+         <span>Disclaimer</span>
         </template>
         <template>
           <Disclaimer />
