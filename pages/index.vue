@@ -50,9 +50,12 @@
 <style lang="scss" scoped>
     .feature-text {
         font-family: "Bungee Inline";
-        font-size: 43px;
-        margin-bottom: 10rem;
+        font-size: 24px;
+        height: 25vh;
 
+        @media(min-width: 768px) {
+            font-size: 36px;
+        }
         a {
             color: #000;
             &:hover {

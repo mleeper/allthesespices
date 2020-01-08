@@ -14,7 +14,7 @@ export default {
           <li><a href="/">Home</a></li>
           <li><a href="/recipes">Recipes</a></li>
           <li><a href="/articles">Articles</a></li>
-          <li><a href="/about-us">Who We are</a></li>
+          <li><a href="/aboutus">Who We are</a></li>
         </ul>
       </nav>
     )

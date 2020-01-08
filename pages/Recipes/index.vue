@@ -56,5 +56,6 @@
 </script>
 <style lang="scss" scoped>
     .recipes {
+        background: rgba(255, 255, 255, 0.65);
     }
 </style>

@@ -55,6 +55,7 @@ export default {
         overflow-x: hidden;
         padding: 1rem 1rem 0 0;
         transition: 0.5s;
+        color: #FFF;
 
         .close-button {
             display: block;
@@ -93,7 +94,7 @@ export default {
         .overlay, .content {
             left: 0;
             top: 100%;
-            width: 100vh;
+            width: 100%;
         }
         &.open {
             .overlay, .content {

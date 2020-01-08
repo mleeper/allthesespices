@@ -8,16 +8,21 @@
       <main class="wrapper main" id="content">
         <div class="top"><slot></slot></div>
         <div class="middle">
-          <!-- <Topics /> -->
           <slot name="middle"></slot>
         </div>
       </main>
     </div>
     <footer class="bottom">
       <slot name="bottom"></slot>
-      <SiteTitle />
       <SiteNav />
-      <Disclaimer />
+      <SlidePanel position="bottom">
+        <template #trigger>
+          <a href="#">Disclaimer</a>
+        </template>
+        <template>
+          <Disclaimer />
+        </template>
+      </SlidePanel>
       <Copyright />
     </footer>
   </div>
@@ -30,6 +35,7 @@ import Topics from "../components/Topics";
 import MainMenu from '../components/MainMenu';
 import Copyright from '../components/Copyright';
 import Disclaimer from '../components/Disclaimer';
+import SlidePanel from '../components/SlidePanel';
 export default {
   name: `SiteLayout`,
   components: {
@@ -40,6 +46,7 @@ export default {
     Topics,
     Copyright,
     Disclaimer,
+    SlidePanel,
   }
 };
 </script>
@@ -47,18 +54,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 header {
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   align-items: baseline;
-
+  height: 100px;
   & > div {
     flex:1 1 auto;
   }
 }
 main {
-  height: calc(100vh - 282px);
+  height: calc(100vh - 200px);
   overflow-y: scroll;
-  padding: 2rem;
+  
+  @media(min-width: 768px) {
+    padding: 1rem;
+  }
 }
 footer {
   display: flex;
@@ -72,8 +82,8 @@ footer {
       font-size: 30px;
     }
   }
+  height: 100px;
 }
-
 .background {
   background: url('/spiceboard.jpg');
   background-size: cover;

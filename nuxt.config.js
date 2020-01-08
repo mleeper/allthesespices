@@ -43,6 +43,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    'nuxt-mq'
   ],
   /*
   ** Axios module configuration
@@ -58,6 +59,14 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+    }
+  },
+  'mq': {
+    defaultBreakpoint: 'default',
+    breakpoints: {
+      sm: 768,
+      md: 1024,
+      lg: Infinity,
     }
   }
 }
