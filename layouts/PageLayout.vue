@@ -63,10 +63,8 @@ header {
   padding: 1rem;
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
   height: 100px;
-  & > div {
-    flex:1 1 auto;
-  }
 }
 main {
   height: calc(100vh - 200px);

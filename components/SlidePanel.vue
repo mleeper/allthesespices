@@ -4,7 +4,7 @@
             <slot name="trigger"></slot></a>
         <div class="overlay">
             <div class="content">
-                <a class="close-button" href="#" v-on:click="toggleMenu"><Icon icon="fas fa-times" /></a>
+                <a class="close-button" href="#" v-on:click="toggleMenu"><Icon icon="fas fa-times fa-2x" /></a>
                 <slot></slot>
             </div>
         </div>
