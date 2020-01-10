@@ -64,15 +64,22 @@ header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  height: 100px;
+  height: 75px;
+  @media(min-width: 768px) {
+    height: 100px;
+  }
 }
 main {
-  height: calc(100vh - 200px);
   overflow-y: scroll;
   padding: 1rem;
 
   &.overlay-content {
     background: rgba(255, 255, 255, 0.65);
+  }
+
+  height: calc(100vh - 145px);
+  @media(min-width: 768px) {
+    height: calc(100vh - 180px);
   }
 }
 footer {
@@ -87,11 +94,19 @@ footer {
       font-size: 30px;
     }
   }
-  height: 100px;
+  height: 70px;
+
+  @media(min-width: 768px) {
+    height: 80px;
+  }
 }
 .background {
-  background: url('/spiceboard.jpg');
+  background: url('/spiceboard-mobile.jpg');
   background-size: cover;
   background-attachment: fixed;
+
+  @media(min-width: 768px) {
+    background: url('/spiceboard.jpg');
+  }
 }
 </style>
