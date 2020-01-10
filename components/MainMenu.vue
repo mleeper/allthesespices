@@ -5,7 +5,7 @@
                 <Icon icon="fas fa-bars fa-2x" />
             </template>
             <template>
-                <SiteNav />
+                <SiteNav orientation="vertical" color="#FFF" />
             </template>
         </SlidePanel>       
     </div>
@@ -35,17 +35,3 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-.main-menu {
-    .site-nav {
-        ul {
-            display: block;
-            li {
-                a {
-                    color: #FFF;
-                }
-            }
-        }
-    }
-}
-</style>

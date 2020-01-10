@@ -4,18 +4,33 @@ export default {
   props: {
     color: {
       type: String,
-      orientation: String,
+    },
+    orientation: {
+      type: String,
+      default: 'horizontal'
+    },
+  },
+  data: function() {
+    return {
+      items: [
+        {name: 'Home', path: '/'},
+        {name: 'Recipes', path: '/recipes'},
+        {name: 'Articles', path: '/articles'},
+        {name: 'Who We Are', path: '/aboutus'},
+      ]
     }
   },
   render(h) {
+    const color = this.color ? `color: ${this.color}` : undefined;
     return (
-      <nav class="site-nav">
+      <nav class={`site-nav ${this.orientation}`}>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/recipes">Recipes</a></li>
-          <li><a href="/articles">Articles</a></li>
-          <li><a href="/aboutus">Who We are</a></li>
-        </ul>
+          {this.items.map(el => (
+            <li key={el.name + el.path}>
+              <a href={el.path} style={color}>{el.name}</a>
+            </li>
+          ))}
+        </ul>        
       </nav>
     )
   }
@@ -33,6 +48,12 @@ export default {
     margin: 0;
     li {
       margin-left: 0.5rem;
+    }
+  }
+
+  &.vertical {
+    ul {
+      display: block;
     }
   }
 }
