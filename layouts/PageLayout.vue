@@ -101,12 +101,12 @@ footer {
   }
 }
 .background {
-  background: url('/spiceboard-mobile.jpg');
+  background-image: url('/spiceboard-mobile.jpg');
   background-size: cover;
   background-attachment: fixed;
 
   @media(min-width: 768px) {
-    background: url('/spiceboard.jpg');
+    background-image: url('/spiceboard.jpg');
   }
 }
 </style>
