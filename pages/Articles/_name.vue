@@ -67,7 +67,8 @@
         }
         @media(min-width: 768px) {
             .recipe-content {
-                width: 50%;
+                width: 85%;
+                padding: 1rem;
             }
             .basic-details {
                 display: flex;
